@@ -24,22 +24,6 @@ const json = (method: string, path: string, body?: unknown, headers: Record<stri
 
 const signedIn = { Cookie: 'sid=abc123' };
 
-describe('GET /', () => {
-    it('serves the form page and sets a cookie', async () => {
-        const res = await fetch(`${base}/`);
-        assert.equal(res.status, 200);
-        assert.match(res.headers.get('content-type') ?? '', /^text\/html/);
-        assert.equal(res.headers.get('set-cookie'), 'sid=abc123; Path=/');
-        assert.match(await res.text(), /<form[^>]*method="POST"[^>]*action="\/api\/posts"/);
-    });
-
-    it('does not set a cookie again when one is sent', async () => {
-        const res = await fetch(`${base}/`, { headers: signedIn });
-        assert.equal(res.status, 200);
-        assert.equal(res.headers.get('set-cookie'), null);
-    });
-});
-
 describe('GET /api/posts', () => {
     it('returns the first page with default count', async () => {
         const res = await fetch(`${base}/api/posts`);

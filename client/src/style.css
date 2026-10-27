@@ -1,13 +1,15 @@
 :root {
-  --bg: #f6f7f9;
+  --bg: #faf6f7;
   --surface: #ffffff;
-  --border: #e4e7ec;
-  --text: #1f2430;
-  --muted: #6b7280;
-  --accent: #3b5bdb;
-  --accent-soft: #eef1fc;
+  --border: #efe2e5;
+  --text: #2b1d21;
+  --muted: #7d6b70;
+  --accent: #db082f;
+  --accent-dark: #b00626;
+  --accent-light: #f6c1cb;
+  --accent-soft: #fbe6ea;
   --radius: 12px;
-  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.06);
+  --shadow: 0 1px 2px rgba(80, 10, 25, 0.04), 0 4px 16px rgba(80, 10, 25, 0.06);
 }
 
 * {
@@ -191,9 +193,9 @@ main.container {
 }
 
 .state.error {
-  color: #b42318;
-  border-color: #fecdca;
-  background: #fef3f2;
+  color: var(--accent-dark);
+  border-color: var(--accent-light);
+  background: var(--accent-soft);
 }
 
 
@@ -225,7 +227,7 @@ main.container {
   border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, filter 0.15s;
+  transition: border-color 0.15s, background 0.15s;
 }
 
 .btn:hover {
@@ -240,17 +242,17 @@ main.container {
 }
 
 .btn.primary:hover {
-  background: var(--accent);
-  filter: brightness(1.08);
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
 }
 
 .btn.danger {
-  color: #b42318;
+  color: var(--accent-dark);
 }
 
 .btn.danger:hover {
-  border-color: #fecdca;
-  background: #fef3f2;
+  border-color: var(--accent-light);
+  background: var(--accent-soft);
 }
 
 .btn:disabled {
@@ -310,7 +312,7 @@ main.container {
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .field .hint {
@@ -328,7 +330,7 @@ main.container {
 }
 
 .form-error {
-  color: #b42318;
+  color: var(--accent-dark);
   font-size: 14px;
 }
 

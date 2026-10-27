@@ -2,7 +2,7 @@
 
 ## server/
 
-4회차 API 서버 그대로.
+4회차 API 서버에서 데모용 form 페이지를 뺀 것. 자세한 내용은 `server/README.md`.
 
 ```bash
 cd server
